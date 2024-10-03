@@ -6,7 +6,8 @@ estatura = int(input("Por facor ingrese su estatura en centimetros: "))
 if estatura <=150:
     print(" Su talla de ropa segun su estatura es: S")
 
-if estatura  >150:
-    print("Su talla de ropa segun su estatura es: M")
 
-    
+elif (estatura >150 <170):
+
+ print("Su talla de ropa segun su estatura es: M")
+
