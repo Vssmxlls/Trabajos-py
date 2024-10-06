@@ -14,5 +14,5 @@ elif (170 >= estatura <180):
     # comment: 
     print("Su talla de ropa respecto a su altura es de: L")
 
-if estatura >=180:
+else:
     print("Su talla de ropa respecto a su altura es de: XL")
