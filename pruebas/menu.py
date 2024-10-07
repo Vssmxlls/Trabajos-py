@@ -20,7 +20,8 @@ if opcion == 1:
     resta= print("- Resta")
     division= print("- Division")
     multiplicacion= print("- Multiplicacion")
-    input("Escriba alguna de las anteriores opciones: ")
+   
+    operacion= input("Escriba alguna de las anteriores opciones: ")
 
 
 
