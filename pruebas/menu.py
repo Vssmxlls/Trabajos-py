@@ -8,10 +8,35 @@ print("Hola",nombre, "Por favor seleccione algunas de las siguientes opciones")
 print("1. Calcular algo")
 print("2. Saludo")
 
-opcion = input("Opcion a elegir: ")
+opcion = int(input("Opcion a elegir: "))
 
 
 if opcion == 1:
-    numero1 = int(input("Ingrese el primer numero: "))
-    nummero2 = int(input("Ingrese el segundo numero: "))
+    a = int(input("Ingrese el primer numero: "))
+    b = int(input("Ingrese el segundo numero: "))
 
+    print ("¿Que deseas hacer?: " )
+    suma= print("- Suma")
+    resta= print("- Resta")
+    division= print("- Division")
+    multiplicacion= print("- Multiplicacion")
+    input("Escriba alguna de las anteriores opciones: ")
+
+
+
+
+    
+    print("el resultado es:", suma)
+    print("el resuktado es: ", resta)
+
+    
+    
+ 
+      
+    
+
+
+
+
+elif opcion == 2:
+    print("!Hola!", nombre, "tu edad es de: ", edad)
