@@ -43,7 +43,7 @@ else:
         ciencia_ficcion_votos +=1
 
 if ciencia_ficcion_votos > accion_votos:
-    print("EL genero preferido es de ciencia ficcion")
+    print("EL genero preferido es de ciencia ficcion con: ")
 else:
     # comment: 
     if accion_votos > ciencia_ficcion_votos:
