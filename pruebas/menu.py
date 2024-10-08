@@ -21,14 +21,48 @@ if opcion == 1:
     division= print("- Division")
     multiplicacion= print("- Multiplicacion")
    
-    operacion= input("Escriba alguna de las anteriores opciones: ")
+    operacion= input("Escriba alguna de las opciones anteriores: ")
+
+    if operacion == "suma":
+
+        resultado = a + b
+
+        print("el resultado es: ", resultado)
+    
+    elif operacion == "resta":
+        
+        resultado2 = a - b
+
+        print("el resultado es: ", resultado2)
+
+    elif operacion == "multiplicacion":
+
+        resultado3 = a * b
+
+        print("el resultado es: ", resultado3)
+
+        
+    
+    elif operacion == "division":
+        resutado4 == a / b
+
+        print("el resultado es:", resultado4)
 
 
 
 
     
-    print("el resultado es:", suma)
-    print("el resuktado es: ", resta)
+    
+    
+    
+
+    
+
+
+
+
+    
+
 
     
     
