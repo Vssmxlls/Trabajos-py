@@ -1,7 +1,9 @@
 print(" Sea bienvenido al menu")
 
 nombre = input("Por favor ingrese su nombre: ")
-edad = input ("Por favor ingrese su edad: ")
+edad = int(input ("Por favor ingrese su edad: "))
+if edad <18:
+    exit
 
 print("Hola",nombre, "Por favor seleccione algunas de las siguientes opciones")
 
@@ -25,9 +27,9 @@ if opcion == 1:
 
     if operacion == "suma":
 
-        resultado = a + b
+        resultadosuma = a + b
 
-        print("el resultado es: ", resultado)
+        print("el resultado es: ", resultadosuma)
     
     elif operacion == "resta":
         
@@ -44,34 +46,25 @@ if opcion == 1:
         
     
     elif operacion == "division":
-        resutado4 == a / b
+        resutado5 = a / b
 
-        print("el resultado es:", resultado4)
-
-
-
-
-    
-    
-    
-    
-
-    
-
-
-
-
-    
-
-
-    
-    
- 
-      
-    
-
-
-
+        print("el resultado es:", resultado5)
 
 elif opcion == 2:
     print("!Hola!", nombre, "tu edad es de: ", edad)
+
+
+opcional= input ("Desea ver los resultados multples?: ")
+if opcional =="si" or "y":
+    print("los resultados de todas las operaciones fueron: ")
+
+    print("Resta: ",resultado2)
+    print("Multiplicacion: ", resultado3)
+    print("Division: ", resultado5)
+
+elif opcional == "no" or "n":
+
+    exit
+   
+
+    
