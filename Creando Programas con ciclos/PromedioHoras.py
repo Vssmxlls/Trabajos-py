@@ -11,6 +11,5 @@ while personas_encuestadas <= 15:
 
 promedio_horas = sum(horas_personas) / personas_encuestadas
 
-# Mostrar resultados
-print("\nLas horas ingresadas por las 15 personas son:", horas_personas)
+
 print("El promedio de horas es:", promedio_horas)
