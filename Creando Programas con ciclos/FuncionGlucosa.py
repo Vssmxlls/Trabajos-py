@@ -3,7 +3,7 @@ def clasificacion_de_glucosa(nivel):
         return "Hipoglucemia"  
     elif nivel > 75 & nivel < 105:
         return "Normal" 
-    elif 105 <= nivel < 126:
+    elif nivel <= 105 & nivel < 126:
         return "Prediabetes" 
     else:
         return "Diabetes"  
