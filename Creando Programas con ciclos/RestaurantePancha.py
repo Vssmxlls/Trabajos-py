@@ -6,6 +6,8 @@ while (True):
 
     respuesta = input("¿Desea registrar otro cliente?: ")
 
+
+
     if respuesta == "no":
         print("Sesion terminada, Muchas gracias por utilizar el sistema de propinas ")
         break
