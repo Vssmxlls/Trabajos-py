@@ -22,4 +22,5 @@ print("El genero de accion tuvo: ", accion_votos, "votos en total")
 print("El genero de ciencia ficcion tuvo: ", ciencia_ficcion_votos, "votos en total")
 
 
+
     
