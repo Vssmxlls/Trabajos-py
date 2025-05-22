@@ -1,40 +1,38 @@
 import socket
 import threading
 
-def repeticion_cliente(conn, addr):
-    print(f"La conexión se ha establecido correctamente con {addr}")
-    conn.sendall("Bienvenido, para salir del servidor escribe 'salir'".encode())
-
-    while True:
-        data = conn.recv(1024)
-        if not data:
-            break
-
-        mensaje = data.decode().strip()
-        print(f"Mensaje recibido de {addr}: {mensaje}")
-
-        if mensaje.lower() == "salir":
-            print(f"El cliente con dirección {addr} se desconectó.")
-            conn.sendall("Desconexión exitosa. Adiós.\n".encode())
-            break
-
-        respuesta = f"Mensaje recibido: {mensaje}\n"
-        conn.sendall(respuesta.encode())
-
-    conn.close()
-
-
+clients = {}
 HOST = '127.0.0.1'
 PORT = 8080
 
-with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
+def handle_client(client_socket, client_name):
+    while True:
+        try:
+            msg = client_socket.recv(1024).decode('utf-8')
+            if msg:
+                to_name, message = msg.split('|', 1)
+                if to_name in clients:
+                    clients[to_name].send(f"{client_name} dice: {message}".encode('utf-8'))
+        except:
+            print(f"{client_name} se desconectó")
+            client_socket.close()
+            del clients[client_name]
+            break
+
+def start_server():
+    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server.bind((HOST, PORT))
-    server.listen()
-    print(f"Servidor escuchando en {HOST}:{PORT}...")
+    server.listen(5)
+    print(f"Servidor escuchando en {HOST}:{PORT}")
 
     while True:
-        conn, addr = server.accept()
-        thread = threading.Thread(target=repeticion_cliente, args=(conn, addr))
-        thread.start()
+        client_socket, addr = server.accept()
+        client_name = client_socket.recv(1024).decode('utf-8')
+        clients[client_name] = client_socket
+        print(f"{client_name} conectado desde {addr}")
+        threading.Thread(target=handle_client, args=(client_socket, client_name)).start()
+
+if __name__ == "__main__":
+    start_server()
 
            
