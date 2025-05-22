@@ -3,7 +3,7 @@ import threading
 
 def repeticion_cliente(conn, addr):
     print(f"La conexión se ha establecido correctamente con {addr}")
-    conn.sendall("Bienvenido, para salir del servidor escribe 'salir'\n".encode())
+    conn.sendall("Bienvenido, para salir del servidor escribe 'salir'".encode())
 
     while True:
         data = conn.recv(1024)
